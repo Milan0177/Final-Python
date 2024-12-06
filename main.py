@@ -28,7 +28,7 @@ class Game(Singleton):
         # User Interface
         self.score = 0
         self.current_level = 1
-        self.LEVEL_THRESHOLDS = [10, 10, 10]  # Level thresholds in meters
+        self.LEVEL_THRESHOLDS = [100, 300, 500]  # Level thresholds in meters
         self.score_txt = config.SMALL_FONT.render("0 m", 1, config.GRAY)
         self.level_txt = config.SMALL_FONT.render("Level 1", 1, config.GRAY)
         self.next_level_txt = config.SMALL_FONT.render("Next: 100 m", 1, config.GRAY)
