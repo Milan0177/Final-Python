@@ -37,13 +37,13 @@ class Game(Singleton):
         self.level_pos = pygame.math.Vector2(10, 40)
         self.next_level_pos = pygame.math.Vector2(10, 70)
 
-        self.gameover_txt = config.LARGE_FONT.render("Game Over", 1, config.GRAY)
+        self.gameover_txt = config.LARGE_FONT.render("Game Over", 1, config.BLACK)
         self.gameover_rect = self.gameover_txt.get_rect(
             center=(config.HALF_XWIN, config.HALF_YWIN))
 
         # Restart button
         self.restart_button = pygame.Rect(config.HALF_XWIN - 100, config.HALF_YWIN + 50, 200, 50)
-        self.restart_button_txt = config.SMALL_FONT.render("Restart", 1, config.WHITE)
+        self.restart_button_txt = config.SMALL_FONT.render("Restart", 1, config.BLACK)
         self.restart_button_txt_rect = self.restart_button_txt.get_rect(center=self.restart_button.center)
 
         # Congratulations screen
@@ -64,21 +64,21 @@ class Game(Singleton):
 
     def update_ui_texts(self):
         """Updates score, level, and next level text."""
-        self.score_txt = config.SMALL_FONT.render(f"{self.score} m", 1, config.GRAY)
-        self.level_txt = config.SMALL_FONT.render(f"Level {self.current_level}", 1, config.GRAY)
+        self.score_txt = config.SMALL_FONT.render(f"{self.score} m", 1, config.BLACK)
+        self.level_txt = config.SMALL_FONT.render(f"Level {self.current_level}", 1, config.BLACK)
         
         if self.current_level == 1:
             remaining = self.LEVEL_THRESHOLDS[0] - self.score
-            self.next_level_txt = config.SMALL_FONT.render(f"Next: {remaining} m", 1, config.GRAY)
+            self.next_level_txt = config.SMALL_FONT.render(f"Next: {remaining} m", 1, config.BLACK)
         elif self.current_level == 2:
             remaining = self.LEVEL_THRESHOLDS[1] - self.score
-            self.next_level_txt = config.SMALL_FONT.render(f"Next: {remaining} m", 1, config.GRAY)
+            self.next_level_txt = config.SMALL_FONT.render(f"Next: {remaining} m", 1, config.BLACK)
         elif self.current_level == 3:
             remaining = self.LEVEL_THRESHOLDS[2] - self.score
-            self.next_level_txt = config.SMALL_FONT.render(f"Next: {remaining} m", 1, config.GRAY)   
+            self.next_level_txt = config.SMALL_FONT.render(f"Next: {remaining} m", 1, config.BLACK)   
         elif self.current_level == 4:
             if self.score >= self.LEVEL_THRESHOLDS[3]:
-                self.next_level_txt = config.SMALL_FONT.render("Congratulations!", 1, config.GRAY)
+                self.next_level_txt = config.SMALL_FONT.render("Congratulations!", 1, config.BLACK)
               # Show the "Congratulations" screen if the player has completed the final level
         if self.current_level == 4 and self.score >= self.LEVEL_THRESHOLDS[2]:
             self.window.fill(config.LIGHT_GREEN)  # New background color for the "Congratulations" screen
