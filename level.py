@@ -19,7 +19,7 @@ class Bonus(Sprite):
 	WIDTH = 15
 	HEIGHT = 15
 
-	def __init__(self, parent:Sprite,color=config.GRAY,
+	def __init__(self, parent:Sprite,color=config.RED,
 			force=config.PLAYER_BONUS_JUMPFORCE):
 
 		self.parent = parent

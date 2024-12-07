@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 from pygame import Surface,Rect
 from camera import Camera
 

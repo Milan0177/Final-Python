@@ -1,8 +1,4 @@
 # -*- coding: utf-8 -*-
-
-
-
-
 class Singleton:
 	"""
 		Singleton pattern.
